@@ -1,0 +1,123 @@
+destination: reference
+
+# website will be referenced on https://pkgs.rstudio.com/
+# Open a PR in https://github.com/rstudio/pkgs.rstudio.com
+url: https://pkgs.rstudio.com/blogdown/
+
+template:
+  package: tidytemplate
+  bootstrap: 5
+  bslib:
+    primary: "#096B72"
+    navbar-background: "#e6f3fc"
+  trailing_slash_redirect: true
+  opengraph:
+    image:
+      src: https://bookdown.org/yihui/blogdown/images/logo.png
+      alt: "blogdown package"
+    twitter:
+      creator: "@rstudio"
+      card: summary
+
+home:
+  links:
+  - text: Learn more about R Markdown
+    href: "https://rmarkdown.rstudio.com"
+
+# custom footer for rmarkdown ecosystem
+footer:
+  structure:
+    left: [rmd]
+    right: [developed_by, p, built_with]
+  components:
+      p: "\n\n"
+      rmd: |
+        **blogdown** is a part of the **R Markdown** ecosystem of packages for creating
+        computational documents in R.<br>Learn more at
+        [rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/).
+
+# structure of website themed for R Markdown ecosystem
+navbar:
+  structure:
+    left:  [intro, examples, articles, reference, news]
+  components:
+    examples:
+      text: Examples
+      href: articles/examples.html
+
+# Add articles menu using
+# https://pkgdown.r-lib.org/dev/reference/build_articles.html#index-and-navbar
+articles:
+- title: Get Started
+  desc: |
+    Start here to know how to learn **blogdown**
+  contents:
+    - blogdown
+- title: Example
+  desc: Gallery of examples
+  contents:
+    - articles/examples
+
+news:
+  releases:
+  - text: "Version 1.6"
+    href: https://yihui.org/en/2021/11/blogdown-v1-6/
+  - text: "Version 1.0"
+    href: https://posit.co/blog/blogdown-v1-0/
+  - text: "Version 0.1"
+    href: https://posit.co/blog/announcing-blogdown/
+
+reference:
+- title: Output formats
+  desc: >
+    If you use files with the `.Rmd` extension, the default output format is
+    `blogdown::html_page`, which uses Pandoc to render. You may also use files with the `.Rmarkdown` file extension, which
+    may be knit to `.markdown` files to be processed by Hugo's markdown renderer.
+  contents:
+  - html_page
+
+- title: Creating new websites & content
+  contents:
+  - new_site
+  - install_theme
+  - new_post
+  - new_content
+  - -starts_with("hugo")
+
+- title: Previewing and rendering websites
+  contents:
+  - serve_site
+  - build_site
+
+- title: Managing website configurations
+  contents:
+  - starts_with("config")
+
+- title: Checking blogdown projects
+  contents:
+  - starts_with("check")
+
+- title: Working with Hugo
+  desc: >
+    These functions are helpers to work with Hugo and its features.
+  contents:
+  - ends_with("hugo")
+  - starts_with("hugo")
+  - starts_with("shortcode")
+  - bundle_site
+  - find_yaml
+  - read_toml
+  - -starts_with("check_")
+
+- title: Helper functions
+  desc: These functions are utility functions when working with blogdown.
+  contents:
+  - build_dir
+  - clean_duplicates
+  - dep_path
+  - starts_with("filter")
+
+- title: The blogdown package
+  desc: ~
+  contents:
+  - blogdown-package
